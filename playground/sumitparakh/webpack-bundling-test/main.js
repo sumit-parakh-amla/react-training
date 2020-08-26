@@ -1,5 +1,8 @@
-export function sayHello() {
-    console.log('Hello World');
+class Student {
+    constructor() {
+        this.rollNumber = 1;
+        console.log('rollNumber : ' + this.rollNumber);
+    }
 }
 
-sayHello();
+const student = new Student();
