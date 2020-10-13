@@ -1,0 +1,9 @@
+.footer-menu li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.footer_content {
+    position: fixed;
+    bottom: 0px;
+}
