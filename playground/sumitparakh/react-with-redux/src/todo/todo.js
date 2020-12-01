@@ -6,21 +6,26 @@ const ToDo = (props) => {
 
     const ref = createRef();
 
-    return <div className="App">
-        <div>
-            <input placeholder="Enter ToDo Item" ref={ref}/>
-            <button onClick={e => {
-                props.dispatch({type: 'ADD_TODO', payload: ref.current.value })
-                // store.dispatch({ type: 'ADD_TODO', payload: 'Hi' })
-            }}>Add</button>
-        </div>
-        <div>
-            <ul>
+    const updateDescription = (e) => {
+        console.log({value: ref.current.value});
+        props.dispatch({
+            type: 'UPDATE_DESCRIPTION',
+            payload: ref.current.value
+        })
+    }
 
-            </ul>
+    return <div className="App">
+        {props.description}
+        <div>
+            <input placeholder="Enter Description" ref={ref} />
         </div>
+        <button onClick={updateDescription} type="button">Update Description</button>
     </div>;
 }
 
+const mapStateToProps = (state) => {
+    console.log({mapStateToProps: state});
+    return {...state.profile};
+};
 
-export default connect()(ToDo);
+export default connect(mapStateToProps)(ToDo);

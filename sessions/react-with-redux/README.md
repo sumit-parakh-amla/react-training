@@ -19,13 +19,54 @@ In general, there are three aspects of data that we’d need to manage in an app
 2. Assigning data to UI elements
 3. Changing data
 
-## Redux Installation
+## 1. Redux Installation
 
 To use redux in react application, you will need to install few dependencies:-
 
 1. redux
 2. react-redux
 
+## 2. Create Store
+
+To create redux store, we use **createStore** method from **redux** library
+
+##### Create Reducer:-
+
+reducer is a function which accepts **state** and **action** as parameters.
+
+```javascript
+const reducer = (state, action) => {
+
+    // It is important to return immutable state
+    return {...state};
+}
+```
+
+```javascript
+import { createStore } from "redux";
+const store = createStore(reducer);
+```
+
+## 3. Wrap component inside \<Provider\>
+
+**Provider** is a react component which comes from **react-redux** library.
+
+```javascript
+<Provider store={<store>}>
+    <Todo></Todo>
+</Provider>
+
+<Account></Account>
+<Profile></Profile>
+```
+
+## 4. Use connect() method to connect React component with Redux
+
+This function returns a react component with redux support
+
+```javascript
+connect()(<Component>)
+```
 
 
 Reference:-
