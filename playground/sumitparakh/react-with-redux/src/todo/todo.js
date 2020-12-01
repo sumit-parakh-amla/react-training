@@ -8,6 +8,7 @@ const ToDo = (props) => {
 
     const updateDescription = (e) => {
         console.log({value: ref.current.value});
+        // Dispatch action from here
         props.dispatch({
             type: 'UPDATE_DESCRIPTION',
             payload: ref.current.value

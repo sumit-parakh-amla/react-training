@@ -1,4 +1,4 @@
-import { connect, Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './App.css';
 import { Profile } from './profile/Profile';
